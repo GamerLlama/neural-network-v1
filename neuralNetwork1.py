@@ -121,7 +121,7 @@ class NeuralNetwork:
             self.setInputs(data[0])
             self.setCorrectOutputs(data[1])
             outputs = self.runExample()
-            error = [(outputs[index]-data[1][index])**2 for index in range(self.layerSizes[-1])]
+            error = [0.5*(outputs[index]-data[1][index])**2 for index in range(self.layerSizes[-1])]
             totalError = [totalError[index] + error[index] for index in range(self.layerSizes[-1])]
         print(totalError)
     
