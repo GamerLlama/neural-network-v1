@@ -137,22 +137,24 @@ class NeuralNetwork:
             startNode = self.nodeLayers[layerIndex][index]
             startNode.error = sum([weight.value*weight.endNode.delta for weight in startNode.outputWeights])
             startNode.delta = startNode.value * (1-startNode.value) * startNode.error
+            print(startNode.delta)
     
     def updateWeightsAndBiases(self):
         for layer in self.weightLayers:
             for weight in layer:
-                weight.value += weight.endNode.delta * weight.startNode.value * self.learningRate
+                weight.value -= weight.endNode.delta * weight.startNode.value * self.learningRate
                 #print(weight.value)
+                #pass
         for layer in self.nodeLayers[1:]:
             for node in layer:
-                node.bias += node.delta * self.learningRate
+                node.bias -= node.delta * self.learningRate
                 #print(node.bias)
                 #pass
     
     def train(self):
         error = self.generateOutputError()
-        print("Error:", error)
-        for index in range(1, len(self.layerSizes)-1):
+        #print("Error:", error)
+        for index in range(len(self.layerSizes)-1):
             self.generateHiddenError(index)
         self.updateWeightsAndBiases()
         self.resetNodes()
@@ -163,3 +165,4 @@ network = NeuralNetwork(networkShape, 0.5)
 network.addTrainingData(trainingData)
 while True:
     network.train()
+    print()
