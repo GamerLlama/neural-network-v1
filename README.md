@@ -1,7 +1,7 @@
 # neural-network-v1
 Based on 3Blue1Brown (https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi)
 
-This neural network comes neatly packaged in few functions and classes, so it can be easily added to any preexisting code or program. Many parameters, such as the number/size of layers in the network, are fully customizable.
+This neural network comes neatly packaged in a few functions and classes, so it can be easily added to any preexisting code or program. Many parameters, such as the number/size of layers in the network, are fully customizable.
 
 This code will include:
   - A NeuralNetwork object, from which inputs and outputs to/from the network can be made
