@@ -14,3 +14,5 @@ To train the algorithm:
   - Take each input from the training data, and generate a result of output neurons, in addition to its one-answer output
   - Backpropagate the desired changes to the output neurons
   - Repeat
+
+Customizable features have all been labeled at the top of the code for easy access.
