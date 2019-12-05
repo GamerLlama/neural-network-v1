@@ -10,8 +10,7 @@ usedIDs = []
 def createNewID():
     global usedIDs
     if len(usedIDs)==999999:
-        print("MAX IDS USED")
-        print(1/0)
+        raise Exception("MAX IDS USED")
     else:
         a = random.randint(1, 1000000)
         while a in usedIDs:
